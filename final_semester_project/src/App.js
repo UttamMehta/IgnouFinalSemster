@@ -1,11 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { Router } from "./Router/Router.jsx";
+import { BrowserRouter } from "react-router-dom";
+import AllRoutes from "./Routes/AllRoutes";
+import LogIn from "./components/LogIin";
 
 function App() {
   return (
     <div className="App">
-      <Router />
+      {/* <LogIn /> */}
+      <BrowserRouter>
+        {" "}
+        <AllRoutes />
+      </BrowserRouter>
     </div>
   );
 }
