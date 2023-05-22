@@ -1,7 +1,9 @@
 
 import React from 'react';
 import {Routes,Route}from "react-router-dom"
-import LogIn from '../components/LogIin';
+import LogIn from '../components/LogIn/LogIn';
+
+
 
 function AllRoutes(props) {
     return (

@@ -10,12 +10,17 @@ import {
 function LogIn(props) {
     return (
         <div>
-     <FormControl>
+     {/* <FormControl>
   <FormLabel>Email address</FormLabel>
   <Input type='email' />
   <FormHelperText>We'll never share your email.</FormHelperText>
   <Input type='password' />
-</FormControl>
+</FormControl> */}
+
+<form>
+
+  
+</form>
             
         </div>
     );
