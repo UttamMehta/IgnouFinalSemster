@@ -11,7 +11,7 @@ function AdminLogIn(props) {
     }
 
     function checkadmin(e){
-        e.preventdefault();
+        e.preventDefault();
         alert ("admin chekced");
     }
 
@@ -23,11 +23,11 @@ function AdminLogIn(props) {
                 <lable>
                     <input type='email' name="email" onChange={updateState}/>
                     Enter Your Email
-                </lable>
+                </lable><br/>
                 <lable>
                     <input type='password' name="password" onChange={updateState}/>
                     Enter Your Password
-                </lable>
+                </lable><br/>
             <button>Submit</button>
             </form>
             
