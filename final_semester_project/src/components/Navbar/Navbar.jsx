@@ -7,6 +7,8 @@ function Navbar() {
         <Link to={"/"}>Home</Link>
         <Link to={"/admin"}>Admin</Link>
         <Link to={"/student"}>Student</Link>
+        <Link to={"/event"}>Event</Link>
+        <Link></Link>
         </div>
     );
 }
