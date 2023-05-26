@@ -18,7 +18,7 @@ function LogIn(props) {
 
   function userRegister(e){
     // e.preventDefault();
-    alert("user Register");
+    alert("user Register Sucessfully");
   }
   console.log(user);
 
@@ -56,11 +56,8 @@ function LogIn(props) {
   <input type="String" name="address" onChange={updateUser}/>
   Enter Your Address
   </lable><br/>
-
 <button disabled={user.name&&user.password&&user.phoneno&&user.email&&user.address?false:true}>Submit</button>
-
-</form>
-            
+</form>   
         </div>
     );
 }

@@ -12,7 +12,7 @@ function AdminLogIn(props) {
 
     function checkadmin(e){
         e.preventDefault();
-        alert ("admin chekced");
+        alert ("admin chekced  sucessful");
     }
 
     console.log(state);
@@ -28,7 +28,7 @@ function AdminLogIn(props) {
                     <input type='password' name="password" onChange={updateState}/>
                     Enter Your Password
                 </lable><br/>
-            <button>Submit</button>
+            <button disabled={state.password&&state.email?false:true}>Submit</button>
             </form>
             
         </div>

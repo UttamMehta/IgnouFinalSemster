@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
+.App div{
+  text-align: center;
+}
 
+form{
+  box-shadow: 10px 10xp 0 2px solid red;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
