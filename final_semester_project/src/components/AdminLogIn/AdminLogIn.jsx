@@ -7,7 +7,7 @@ function AdminLogIn(props) {
 
     function updateState(e){
         const {value,name}=e.target;
-        setState({...state,name:value});
+        setState({...state,[name]:value});
     }
 
     function checkadmin(e){
