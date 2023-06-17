@@ -4,7 +4,15 @@ import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundColor: "rgb(26, 26, 26)",
+        fontFamily: "sans-serif",
+        height: "100vh",
+        color: "white",
+      }}
+    >
       <BrowserRouter>
         {/* <Navbar /> */}
         <AllRoutes />

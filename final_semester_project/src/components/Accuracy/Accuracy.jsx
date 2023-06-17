@@ -13,26 +13,27 @@ const [right,setRight]=useState(0);
 const [wrong,setWrong]=useState(0);
 const [state,setState]=useState("");
 const [accuracy,setAccuracy]=useState(0);
+const [total,setTotal]=useState(0);
+
 useEffect(()=>{
 
     setTimeout(()=>{
         setState("");
     },500)
 
-    if(!timeup)
-    {
+  
        let total=right+wrong
         let z=Math.round((right/total)*100);
         setAccuracy(z);
-    }
- 
+    
     if(ne){
         setRight(0);
         setWrong(0);
         setAccuracy(0);
+        setTotal(0);
     }
 
-},[right,wrong,timeup,ne])
+},[right,wrong,timeup,ne,total])
 
 
 function check(e){
@@ -47,11 +48,13 @@ if(arr[i]===value||(i>7&&value===";")){
     setI(ran);
 }
 
-else
-setWrong(prev=>prev+1);
+else{
+alert(`Incorrect Key pressed. Press  ${arr[i]} instead of  ${value}`)
+setState("");
+setWrong(prev=>prev+1);}
 }
 
-
+setTotal(prev=>prev+1)
 }
 
 
@@ -60,26 +63,33 @@ setWrong(prev=>prev+1);
         <div>
             {test?
             
-            <div>{timeup?
+            <div>
             <h4>Enter the key <span style={{color:"red"}}> {i>7?arr[7]:arr[i]} </span>
             <br/>
             <br/>
-            <input name="typing"  onChange={check} style={{height:"24px"}} value={state} /><br/>
+            <input name="typing"  onChange={check} style={{height:"48px",width:"100%",fontSize:"24px" }} value={state}  /><br/>
           
           {/* <p>{wrong>0?`Wrong key pressed ${wrong} times`:<>Not pressed any wrong keys</>}</p>
           <p>Right key pressed {right} times</p>
             </h4>
             :<h4>Accuracy:{accuracy?accuracy:0} % */}
             </h4>
-            :<></>
-            }
+        
 
             <Kyboard arr={arr} i={i}/>
-            </div>:
+            </div>
+            
+            :<></>}
+            <div style={{display:"flex",gap:"24px"}}>
+            <h4>Accuracy:{accuracy?accuracy:0} %</h4>
+            <h4>Total Key Pressed:{total}</h4>
+            <h4>Correct Key Pressed:{right}</h4>
+            <h4>Incorrect Key Pressed:{wrong}</h4>
+            </div>
             
             
+             {/* <h5>User can start test by clicking on start button</h5> */}
             
-            <h5>User can start test by clicking on start button</h5>}
             
         </div>
     );

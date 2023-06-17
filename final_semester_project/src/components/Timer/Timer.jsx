@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import Accuracy from '../Accuracy/Accuracy';
+import styles from "./Timer.module.css"
 
 function Timer(props) {
 
@@ -49,6 +50,7 @@ function Timer(props) {
     function stop(){
         changeTimeCurrent();
         setTimeUp(false);
+        setTest(false)
     }
 
     function changeTimeCurrent(){
@@ -58,15 +60,20 @@ function Timer(props) {
 
     return (
         <div>
-            <div style={{display:"flex",flexDirection:"column",gap:"5%",padding:"10px",width:"100%",alignItems:"center",justifyContent:"center"}}>
+            <div style={{
+                display:"flex",flexDirection:"column",gap:"10%",width:"100%",alignItems:"center",justifyContent:"center"}}>
+                   <div className={styles.time} style={{backgroundColor:"blue",padding:"10px 36px 10px 36px",marginTop:"10px",borderRadius:"16px"}}>
                 <h3>
             {timemin<=9?`  0${timemin}`:` ${timemin}`}:{timesec<=9?`0${timesec}`:`${timesec}` } min</h3><br/>
-            <button className="button" onClick={start}>Start</button><br/>
-            <button onClick={reset}>Reset</button><br/>
-            <button onClick={stop}>Stop</button><br/>
-            <b style={{padding:"15px"}}>User should keep his left fingers on A S D F and right finger on J K L ; respectively</b>
+            <div className={styles.div} style={{gap:"16px"}}> <button onClick={start} 
+            
+           ><>Start</></button>
+            <button onClick={reset} >Reset</button>
+            <button onClick={stop} >Pause</button>
+           </div></div>
+           <b style={{padding:"15px"}}>User should keep his left fingers on A S D F and right finger on J K L ; respectively</b>
             <br/>
-            <Accuracy test={test} timeup={timeup} ne={ne}/>
+            <Accuracy test={test} timeup={timeup} ne={ne} />
             </div>
         </div>
     );
