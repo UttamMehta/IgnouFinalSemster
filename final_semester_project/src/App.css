@@ -13,7 +13,10 @@ form{
   pointer-events: none;
 }
 
-
+body{
+  background-color: rgb(26, 26, 26);
+  font-family: sans-serif;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

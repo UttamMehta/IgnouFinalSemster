@@ -22,8 +22,6 @@ function Timer(props) {
             setTimeMin((prev)=>prev-1);
             setTimeSec(59);
         }
-       
-       
 
     },[timesec,timemin])
 
@@ -36,7 +34,7 @@ function Timer(props) {
 
       time.current=setInterval(() => {
           setTimeSec(prev=>prev-1);          
-      }, 100);
+      }, 1000);
     }
     }
     function reset(){
