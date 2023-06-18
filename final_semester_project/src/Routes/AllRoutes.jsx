@@ -6,6 +6,7 @@ import AdminLogIn from '../components/AdminLogIn/AdminLogIn';
 import Home from '../components/Home/Home';
 import Timer from '../components/Timer/Timer';
 import Board from '../ListedComponents/Board/Board';
+import Dashboard from '../ListedComponents/Dashboard/Dashboard';
 
 
 
@@ -24,6 +25,7 @@ function AllRoutes(props) {
               {/* <Route Path="/error" element={} /> */}
 
               <Route path="/" element={<Board />}/>
+              <Route path="/dashboard" element ={<Dashboard />} />
 
 
             </Routes>

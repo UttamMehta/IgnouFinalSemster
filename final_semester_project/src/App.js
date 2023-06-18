@@ -1,6 +1,8 @@
 import { BrowserRouter } from "react-router-dom";
 import AllRoutes from "./Routes/AllRoutes";
 import Navbar from "./components/Navbar/Navbar";
+import { SessionProvider } from "next-auth/react";
+import Login from "./components/pages/Login";
 
 function App() {
   return (
@@ -13,10 +15,13 @@ function App() {
     //   color: "white",
     // }}
     >
-      <BrowserRouter>
-        {/* <Navbar /> */}
-        <AllRoutes />
-      </BrowserRouter>
+      <SessionProvider>
+        {/* <BrowserRouter>
+          <Navbar />
+          <AllRoutes />
+        </BrowserRouter> */}
+        <Login />
+      </SessionProvider>
     </div>
   );
 }

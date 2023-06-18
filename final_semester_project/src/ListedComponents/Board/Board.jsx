@@ -1,8 +1,15 @@
 
 import React from 'react';
+import {useSession ,signIn,signOut} from 'next-auth/react'
 import style from "./Board.module.css"
+import Dashboard from '../Dashboard/Dashboard';
 
 function Board(props) {
+const {data:session}=useSession();
+// if(session){
+//      <Dashboard />
+// }
+
     return (
         <div className={style.board_1stdiv}>
 
