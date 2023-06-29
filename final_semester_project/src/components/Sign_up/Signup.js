@@ -86,56 +86,33 @@ const Signup = () => {
   return (
     <>
       <section>
-        <div className="Appss">
-          {/* <div className="signupp">
-            <div id="log-designs">
-              <NavLink className="logs" to="/Login">
-                Login
-              </NavLink>
-            </div>
+        <div className="infos">
+          <Form id="formms">
+            <Form.Group>
+              <h2 id="joinn">Registration Form</h2>
 
-            <div id="sign-designs">
-              <NavLink className="signs" to="/Signup">
-                Register
-              </NavLink>
-            </div>
-          </div> */}
-          {/* <hr className="lines"></hr> */}
-          <div className="contain">
-            {/* <div className="piccs">
-              <img
-                className="logos"
-                src="https://accounts.practo.com/static/images/illustration.png"
-              ></img>
-            </div> */}
+              <hr />
+            </Form.Group>
 
-            <div className="infos">
-              <Form id="formms">
-                <Form.Group>
-                  <h2 id="joinn">Join Practo</h2>
-
-                  <hr />
-                </Form.Group>
-
-                <Form.Group>
-                  <label id="labelss" for="name">
-                    Full Name
-                  </label>
-                  <br></br>
-                  <input
-                    id="name"
-                    type="text"
-                    name="name"
-                    onChange={getdata}
-                    placeholder="Full Name"
-                  />
-                </Form.Group>
-                <Form.Group>
-                  <label id="labelss" for="mobile">
-                    Email
-                  </label>
-                  <br></br>
-                  {/* <select id="sel" onClick={getdata} value={data.country_code}>
+            <Form.Group>
+              <label id="labelss" for="name">
+                Full Name
+              </label>
+              <br></br>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                onChange={getdata}
+                placeholder="Full Name"
+              />
+            </Form.Group>
+            <Form.Group>
+              <label id="labelss" for="mobile">
+                Email
+              </label>
+              <br></br>
+              {/* <select id="sel" onClick={getdata} value={data.country_code}>
                     <option>+91(IND)</option>
                     <option>+65(SGP)</option>
                     <option>+63(PHL)</option>
@@ -148,66 +125,64 @@ const Signup = () => {
                     <option>+84(VNM)</option>
                     <option>+971(UAE)</option>
                   </select> */}
-                  <input
-                    id="mobiles"
-                    type="email"
-                    name="email"
-                    onChange={getdata}
-                    placeholder="Email"
-                    style={{ width: "100%" }}
-                  />
-                </Form.Group>
+              <input
+                id="mobiles"
+                type="email"
+                name="email"
+                onChange={getdata}
+                placeholder="Email"
+                style={{ width: "100%" }}
+              />
+            </Form.Group>
 
-                <Form.Group>
-                  <label id="labelss" for="passcode">
-                    Create Password
-                  </label>
-                  <br></br>
-                  <input
-                    id="passcode"
-                    type="password"
-                    name="password"
-                    onChange={getdata}
-                    placeholder="Password"
-                  />
-                </Form.Group>
+            <Form.Group>
+              <label id="labelss" for="passcode">
+                Create Password
+              </label>
+              <br></br>
+              <input
+                id="passcode"
+                type="password"
+                name="password"
+                onChange={getdata}
+                placeholder="Password"
+              />
+            </Form.Group>
 
-                <Form.Group>
-                  <div id="checking">
-                    <input id="checkboxx" type="checkbox" onChange={check} />
-                    <label id="paras">
-                      Receive relevant offers and promotional communication from
-                      Practo
-                    </label>
-                  </div>
-                </Form.Group>
+            <Form.Group>
+              <div id="checking">
+                <input id="checkboxx" type="checkbox" onChange={check} />
+                <label id="paras">
+                  Receive relevant offers and promotional communication from
+                  Practo
+                </label>
+              </div>
+            </Form.Group>
 
-                <Button
-                  disabled={
-                    tick && inpval.name && inpval.email && inpval.password
-                      ? false
-                      : true
-                  }
-                  variant="primary"
-                  id="submit"
-                  onClick={addData}
-                  type="submit"
-                >
-                  Register
-                </Button>
-                <p id="parags">
-                  Already Have an Account{" "}
-                  <span>
-                    <NavLink id="linkss" to="/Login">
-                      Login
-                    </NavLink>
-                  </span>{" "}
-                </p>
-              </Form>
+            <Button
+              disabled={
+                tick && inpval.name && inpval.email && inpval.password
+                  ? false
+                  : true
+              }
+              variant="primary"
+              id="submit"
+              onClick={addData}
+              type="submit"
+            >
+              Register
+            </Button>
+            <p id="parags">
+              Already Have an Account?{" "}
+              <span>
+                <NavLink id="linkss" to="/Login">
+                  Login
+                </NavLink>
+              </span>{" "}
+            </p>
+          </Form>
 
-              <ToastContainer />
-            </div>
-          </div>
+          <ToastContainer />
         </div>
       </section>
     </>

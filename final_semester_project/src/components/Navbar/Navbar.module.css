@@ -5,8 +5,9 @@
     padding: 0px 5% 0px 5%;
     align-items: center;
     height:60px;
-    background-color: lightgreen;
+    background-color: rgb(17, 18, 17);
     position: sticky;
+    overflow: hidden;
     top: 0; 
 }
 
