@@ -1,0 +1,16 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgreen;
+    padding: 0px 5% 0px 5%;
+    align-items: center;
+    height:60px;
+    background-color: lightgreen;
+    position: sticky;
+    top: 0; 
+}
+
+.navbar>div{
+    font-size: large;
+    font-weight: bold;
+}
