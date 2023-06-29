@@ -1,10 +1,13 @@
 import React from 'react';
+import style from "./Home.module.css"
 
 function Home(props) {
+
+
     return (
-        <div style={{display:"flex",alignItems:"center"}}>
-            <img  style={{width:"100%"}} src="https://cdn.dribbble.com/users/2305285/screenshots/10265104/media/82ffc656956837c17c5d9df9ff17fb71.png?compress=1&resize=768x576&vertical=top" alt="collage image" />
-            {/* <img src="https://cdn.dribbble.com/users/2305285/screenshots/9997671/media/2693b2f1cdbee9dab17849f85ffcebb3.png?compress=1&resize=768x576&vertical=top" alt="collage 2nd image" /> */}
+        <div style={style.img}>       
+            <img src="https://www.besonline.in/blog/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-15-at-11.07.04-AM.jpeg" />
+            
         </div>
     );
 }

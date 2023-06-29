@@ -6,22 +6,11 @@ import Login from "./components/pages/Login";
 
 function App() {
   return (
-    <div
-    // className="App"
-    // style={{
-    //   backgroundColor: "rgb(26, 26, 26)",
-    //   fontFamily: "sans-serif",
-    //   height: "100vh",
-    //   color: "white",
-    // }}
-    >
-      <SessionProvider>
-        {/* <BrowserRouter>
-          <Navbar />
-          <AllRoutes />
-        </BrowserRouter> */}
-        <Login />
-      </SessionProvider>
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <AllRoutes />
+      </BrowserRouter>
     </div>
   );
 }
