@@ -16,6 +16,8 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
+    Country: "",
+    Bloodgroup: "",
   });
 
   const [tick, setTick] = useState(false);
@@ -113,18 +115,18 @@ const Signup = () => {
               </label>
               <br></br>
               <select id="sel" onClick={getdata} value={data.country_code}>
-                    <option>+91(IND)</option>
-                    <option>+65(SGP)</option>
-                    <option>+63(PHL)</option>
-                    <option>+60(MYS)</option>
-                    <option>+62(IDN)</option>
-                    <option>+55(BRA)</option>
-                    <option>+52(MEX)</option>
-                    <option>+54(ARG)</option>
-                    <option>+56(CHL)</option>
-                    <option>+84(VNM)</option>
-                    <option>+971(UAE)</option>
-                  </select>
+                <option>+91(IND)</option>
+                <option>+65(SGP)</option>
+                <option>+63(PHL)</option>
+                <option>+60(MYS)</option>
+                <option>+62(IDN)</option>
+                <option>+55(BRA)</option>
+                <option>+52(MEX)</option>
+                <option>+54(ARG)</option>
+                <option>+56(CHL)</option>
+                <option>+84(VNM)</option>
+                <option>+971(UAE)</option>
+              </select>
               <input
                 id="mobiles"
                 type="email"
