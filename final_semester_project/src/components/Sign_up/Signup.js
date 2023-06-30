@@ -112,7 +112,7 @@ const Signup = () => {
                 Email
               </label>
               <br></br>
-              {/* <select id="sel" onClick={getdata} value={data.country_code}>
+              <select id="sel" onClick={getdata} value={data.country_code}>
                     <option>+91(IND)</option>
                     <option>+65(SGP)</option>
                     <option>+63(PHL)</option>
@@ -124,7 +124,7 @@ const Signup = () => {
                     <option>+56(CHL)</option>
                     <option>+84(VNM)</option>
                     <option>+971(UAE)</option>
-                  </select> */}
+                  </select>
               <input
                 id="mobiles"
                 type="email"
