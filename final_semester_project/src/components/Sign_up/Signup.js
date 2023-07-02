@@ -16,8 +16,8 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
-    Country: "",
-    Bloodgroup: "",
+    country: "",
+    bloodgroup: "",
   });
 
   const [tick, setTick] = useState(false);
@@ -42,7 +42,7 @@ const Signup = () => {
   const addData = async (e) => {
     e.preventDefault();
 
-    const { name, email, password } = inpval;
+    const { name, email, password, country, bloodgroup } = inpval;
     await addUser({ name, email, password });
   };
 
@@ -114,7 +114,7 @@ const Signup = () => {
                 Email
               </label>
               <br></br>
-              <select id="sel" onClick={getdata} value={data.country_code}>
+              <select id="sel" onChange={getdata}>
                 <option>+91(IND)</option>
                 <option>+65(SGP)</option>
                 <option>+63(PHL)</option>
@@ -148,6 +148,20 @@ const Signup = () => {
                 name="password"
                 onChange={getdata}
                 placeholder="Password"
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <label id="labelss" for="passcode">
+                Enter BloodGroup
+              </label>
+              <br></br>
+              <input
+                id="bloodgroup"
+                type="text"
+                name="bloodgroup"
+                onChange={getdata}
+                placeholder="Enter BloodGroup"
               />
             </Form.Group>
 
