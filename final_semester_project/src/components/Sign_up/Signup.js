@@ -6,18 +6,30 @@ import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { axios } from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import "./Signup.css";
+import SIGNUP_SEVER from ".env";
 
 const Signup = () => {
   const history = useNavigate();
 
   const [inpval, setInpval] = useState({
-    name: "",
+    first_name: "",
+    middle_name: "",
+    last_name: "",
     email: "",
     password: "",
-    country: "",
-    bloodgroup: "",
+    father_name: "",
+    mother_name: "",
+    dob: "",
+    blood_group: "",
+    address: { state: "", pin: "", city: "", nation: "" },
+    gender: "",
+    image: "",
+    signature: "",
+    addhaar_no: 0,
+    file: [],
   });
 
   const [tick, setTick] = useState(false);
@@ -42,14 +54,46 @@ const Signup = () => {
   const addData = async (e) => {
     e.preventDefault();
 
-    const { name, email, password, country, bloodgroup } = inpval;
-    await addUser({ name, email, password });
+    const {
+      first_name,
+      middle_name,
+      last_name,
+      email,
+      password,
+      father_name,
+      mother_name,
+      dob,
+      blood_group,
+      address = {},
+      gender,
+      image,
+      signature,
+      addhaar_no,
+      file = [],
+    } = inpval;
+    await addUser({
+      first_name,
+      middle_name,
+      last_name,
+      email,
+      password,
+      father_name,
+      mother_name,
+      dob,
+      blood_group,
+      address,
+      gender,
+      image,
+      signature,
+      addhaar_no,
+      file,
+    });
   };
+  console.log(SIGNUP_SEVER);
 
-  async function addUser(data) {
+  async function addUser(data = {}) {
     try {
-      let req = await fetch(``, {
-        method: "POST",
+      let req = await axios.post(process.env.SIGNUP_SEVER, {
         body: JSON.stringify(data),
         headers: {
           "Content-type": "application/json",
@@ -98,11 +142,37 @@ const Signup = () => {
 
             <Form.Group>
               <label id="labelss" for="name">
-                Full Name
+                First Name
               </label>
               <br></br>
               <input
-                id="name"
+                id="first_name"
+                type="text"
+                name="name"
+                onChange={getdata}
+                placeholder="Full Name"
+              />
+            </Form.Group>
+            <Form.Group>
+              <label id="labelss" for="name">
+                Middle Name
+              </label>
+              <br></br>
+              <input
+                id="middle_name"
+                type="text"
+                name="name"
+                onChange={getdata}
+                placeholder="Full Name"
+              />
+            </Form.Group>
+            <Form.Group>
+              <label id="labelss" for="name">
+                Last Name
+              </label>
+              <br></br>
+              <input
+                id="last_name"
                 type="text"
                 name="name"
                 onChange={getdata}
@@ -113,7 +183,7 @@ const Signup = () => {
               <label id="labelss" for="mobile">
                 Email
               </label>
-              <br></br>
+              {/* <br></br>
               <select id="sel" onChange={getdata}>
                 <option>+91(IND)</option>
                 <option>+65(SGP)</option>
@@ -126,13 +196,13 @@ const Signup = () => {
                 <option>+56(CHL)</option>
                 <option>+84(VNM)</option>
                 <option>+971(UAE)</option>
-              </select>
+              </select> */}
               <input
                 id="mobiles"
                 type="email"
                 name="email"
                 onChange={getdata}
-                placeholder="Email"
+                placeholder="email"
                 style={{ width: "100%" }}
               />
             </Form.Group>
@@ -146,6 +216,19 @@ const Signup = () => {
                 id="passcode"
                 type="password"
                 name="password"
+                onChange={getdata}
+                placeholder="Password"
+              />
+            </Form.Group>
+            <Form.Group>
+              <label id="labelss" for="father">
+                Father Name
+              </label>
+              <br></br>
+              <input
+                id="passcode"
+                type="text"
+                name="father_name"
                 onChange={getdata}
                 placeholder="Password"
               />
