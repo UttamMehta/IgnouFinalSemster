@@ -336,10 +336,16 @@ section .piccs{
  */
 
 
-#formms {
-  width: 100%;
-  padding: 40px;
+#forms {
+  width: 50%;
+  padding: 2%;
   background: rgb(255, 255, 255/0.9);
   box-shadow: #000000 0px 3px 8px;
-  margin: 50px;
+  margin: auto;
+}
+
+.infos>#forms>input{
+display: grid;
+grid-template-columns: 1fr,1fr;
+
 }

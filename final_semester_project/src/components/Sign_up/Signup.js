@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { axios } from "axios";
+import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import "./Signup.css";
 
@@ -36,17 +36,22 @@ const Signup = () => {
   const [data, setData] = useState([]);
   // console.log(inpval);
 
-  const getdata = (e) => {
+  const getdata = async (e) => {
     const { value, name } = e.target;
+
     // console.log(value,name);
+    console.log(e);
+    console.log(e.target.files[0]);
 
     if (name === "file") {
-      setInpval((prev) => {
-        let file = [];
-        file = prev.file;
-        file.push(value);
-        return { ...prev, file };
-      });
+      let z = await convertBase64(e.target.files[0]);
+      console.log(z);
+      // setInpval((prev) => {
+      //   let file = [];
+      //   file = prev.file;
+      //   file.push(z);
+      //   return { ...prev, file };
+      // });
     } else if (
       name === "state" ||
       name === "pin" ||
@@ -107,6 +112,17 @@ const Signup = () => {
       file,
     });
   };
+
+  function convertBase64(convert) {
+    let reader = new FileReader();
+    var z1 = "";
+    reader.readAsDataURL(convert);
+    reader.onload = () => {
+      z1 = reader.result;
+    };
+    return z1;
+  }
+
   console.log();
 
   async function addUser(data = {}) {
@@ -152,7 +168,7 @@ const Signup = () => {
     <>
       <section>
         <div className="infos">
-          <Form id="formms">
+          <Form id="forms">
             <Form.Group>
               <h2 id="joinn">Registration Form</h2>
 
@@ -172,6 +188,7 @@ const Signup = () => {
                 placeholder="Enter First Name"
               />
             </Form.Group>
+            <br></br>
             <Form.Group>
               <label id="labelss" for="name">
                 Middle Name
@@ -185,6 +202,7 @@ const Signup = () => {
                 placeholder="Enter Middle Name"
               />
             </Form.Group>
+            <br></br>
             <Form.Group>
               <label id="labelss" for="name">
                 Last Name
@@ -198,6 +216,7 @@ const Signup = () => {
                 placeholder="Enter Last Name"
               />
             </Form.Group>
+            <br></br>
             <Form.Group>
               <label id="labelss" for="mobile">
                 Email
@@ -225,6 +244,7 @@ const Signup = () => {
                 style={{ width: "100%" }}
               />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <label id="labelss" for="passcode">
@@ -239,6 +259,7 @@ const Signup = () => {
                 placeholder="Enter Password"
               />
             </Form.Group>
+            <br></br>
             <Form.Group>
               <label id="labelss" for="father">
                 Father Name
@@ -253,6 +274,7 @@ const Signup = () => {
               />
             </Form.Group>
 
+            <br></br>
             <Form.Group>
               <label id="labelss" for="father">
                 Mother Name
@@ -266,6 +288,7 @@ const Signup = () => {
                 placeholder="Enter Mother Name"
               />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <label id="labelss" for="dob">
@@ -274,6 +297,7 @@ const Signup = () => {
               <br></br>
               <input id="passcode" type="date" name="dob" onChange={getdata} />
             </Form.Group>
+            <br></br>
             <Form.Group>
               <label id="labelss" for="passcode">
                 Enter Blood Group
@@ -287,6 +311,7 @@ const Signup = () => {
                 placeholder="Enter Blood Group"
               />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <label id="labelss" for="passcode">
@@ -301,6 +326,7 @@ const Signup = () => {
                 placeholder="Enter City"
               />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <label id="labelss" for="passcode">
@@ -315,6 +341,7 @@ const Signup = () => {
                 placeholder="Enter Six Digit Pin Code"
               />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <label id="labelss" for="passcode">
@@ -327,6 +354,7 @@ const Signup = () => {
                 <option value="Bihar">Bihar</option>
               </select>
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <label id="labelss" for="passcode">
@@ -339,6 +367,7 @@ const Signup = () => {
                 <option value="Nepal">Nepal</option>
               </select>
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <label id="labelss" for="passcode">
@@ -353,6 +382,7 @@ const Signup = () => {
                 placeholder="Enter Addhaar Number"
               />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <label id="labelss" for="passcode">
@@ -366,26 +396,55 @@ const Signup = () => {
                 <option value="other">Other</option>
               </select>
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <lable>Attach Your Image</lable>
               <br></br>
-              <input type="file" name="image" onChange={getdata} />
+              <input
+                accept="image/"
+                type="file"
+                name="image"
+                onChange={getdata}
+              />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <lable>Attach Your Signature</lable>
               <br></br>
-              <input type="file" name="signature" onChange={getdata} />
+              <input
+                accept="image/"
+                type="file"
+                name="signature"
+                onChange={getdata}
+              />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <lable>Supportive Documents Images</lable>
               <br></br>
-              <input type="file" name="file" onChange={getdata} />
-              <input type="file" name="file" onChange={getdata} />
-              <input type="file" name="file" onChange={getdata} />
+              <input
+                accept="image/"
+                type="file"
+                name="file"
+                onChange={getdata}
+              />
+              <input
+                accept="image/"
+                type="file"
+                name="file"
+                onChange={getdata}
+              />
+              <input
+                accept="image/"
+                type="file"
+                name="file"
+                onChange={getdata}
+              />
             </Form.Group>
+            <br></br>
 
             <Form.Group>
               <div id="checking">
@@ -395,6 +454,15 @@ const Signup = () => {
                 </label>
               </div>
             </Form.Group>
+            <br></br>
+
+            <div>
+              {inpval.file.length !== 0
+                ? inpval.file.map((el, i) => {
+                    <img alt="support_Documents" src={el} />;
+                  })
+                : ""}
+            </div>
 
             <Button
               disabled={
