@@ -9,7 +9,6 @@ import { ToastContainer, toast } from "react-toastify";
 import { axios } from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import "./Signup.css";
-import SIGNUP_SEVER from ".env";
 
 const Signup = () => {
   const history = useNavigate();
@@ -38,19 +37,38 @@ const Signup = () => {
   // console.log(inpval);
 
   const getdata = (e) => {
-    // console.log(e.target.value);
-
     const { value, name } = e.target;
     // console.log(value,name);
 
-    setInpval(() => {
-      return {
-        ...inpval,
-        [name]: value,
-      };
-    });
+    if (name === "file") {
+      setInpval((prev) => {
+        let file = [];
+        file = prev.file;
+        file.push(value);
+        return { ...prev, file };
+      });
+    } else if (
+      name === "state" ||
+      name === "pin" ||
+      name === "city" ||
+      name === "nation"
+    ) {
+      setInpval((prev) => {
+        let address = {};
+        address = prev.address;
+        address = { ...address, [name]: value };
+        return { ...inpval, address };
+      });
+    } else
+      setInpval(() => {
+        return {
+          ...inpval,
+          [name]: value,
+        };
+      });
   };
 
+  console.log(inpval);
   const addData = async (e) => {
     e.preventDefault();
 
@@ -89,7 +107,7 @@ const Signup = () => {
       file,
     });
   };
-  console.log(SIGNUP_SEVER);
+  console.log();
 
   async function addUser(data = {}) {
     try {
@@ -99,23 +117,24 @@ const Signup = () => {
           "Content-type": "application/json",
         },
       });
-      let res = await req.json();
+      console.log(req);
+      // let res = await req.json();
       // console.log(res);
-      if (res.error)
-        toast.error(res.error, {
-          position: "top-center",
-        });
-      else if (res.message) {
-        // toast.success(res.message, {
-        //   position: "top-center",
-        // });
-        toast.success(res.message, {
-          position: "top-center",
-        });
-        alert("Signup Successfull");
-        history("/login");
-        // setLocation(true);
-      }
+      // if (res.error)
+      //   toast.error(res.error, {
+      //     position: "top-center",
+      //   });
+      // else if (res.message) {
+      //   // toast.success(res.message, {
+      //   //   position: "top-center",
+      //   // });
+      //   toast.success(res.message, {
+      //     position: "top-center",
+      //   });
+      //   alert("Signup Successfull");
+      //   history("/login");
+      //   // setLocation(true);
+      // }
       // alert("Signup Successfull");
     } catch (e) {
       toast.error(e, {
@@ -148,9 +167,9 @@ const Signup = () => {
               <input
                 id="first_name"
                 type="text"
-                name="name"
+                name="first_name"
                 onChange={getdata}
-                placeholder="Full Name"
+                placeholder="Enter First Name"
               />
             </Form.Group>
             <Form.Group>
@@ -161,9 +180,9 @@ const Signup = () => {
               <input
                 id="middle_name"
                 type="text"
-                name="name"
+                name="middle_name"
                 onChange={getdata}
-                placeholder="Full Name"
+                placeholder="Enter Middle Name"
               />
             </Form.Group>
             <Form.Group>
@@ -174,9 +193,9 @@ const Signup = () => {
               <input
                 id="last_name"
                 type="text"
-                name="name"
+                name="last_name"
                 onChange={getdata}
-                placeholder="Full Name"
+                placeholder="Enter Last Name"
               />
             </Form.Group>
             <Form.Group>
@@ -202,7 +221,7 @@ const Signup = () => {
                 type="email"
                 name="email"
                 onChange={getdata}
-                placeholder="email"
+                placeholder="Enter Your Email"
                 style={{ width: "100%" }}
               />
             </Form.Group>
@@ -217,7 +236,7 @@ const Signup = () => {
                 type="password"
                 name="password"
                 onChange={getdata}
-                placeholder="Password"
+                placeholder="Enter Password"
               />
             </Form.Group>
             <Form.Group>
@@ -230,37 +249,162 @@ const Signup = () => {
                 type="text"
                 name="father_name"
                 onChange={getdata}
-                placeholder="Password"
+                placeholder="Enter Father Name"
               />
             </Form.Group>
 
             <Form.Group>
+              <label id="labelss" for="father">
+                Mother Name
+              </label>
+              <br></br>
+              <input
+                id="passcode"
+                type="text"
+                name="mother_name"
+                onChange={getdata}
+                placeholder="Enter Mother Name"
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <label id="labelss" for="dob">
+                Date Of Birth
+              </label>
+              <br></br>
+              <input id="passcode" type="date" name="dob" onChange={getdata} />
+            </Form.Group>
+            <Form.Group>
               <label id="labelss" for="passcode">
-                Enter BloodGroup
+                Enter Blood Group
               </label>
               <br></br>
               <input
                 id="bloodgroup"
                 type="text"
-                name="bloodgroup"
+                name="blood_group"
                 onChange={getdata}
-                placeholder="Enter BloodGroup"
+                placeholder="Enter Blood Group"
               />
+            </Form.Group>
+
+            <Form.Group>
+              <label id="labelss" for="passcode">
+                Enter City
+              </label>
+              <br></br>
+              <input
+                id="bloodgroup"
+                type="text"
+                name="city"
+                onChange={getdata}
+                placeholder="Enter City"
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <label id="labelss" for="passcode">
+                Enter Pin
+              </label>
+              <br></br>
+              <input
+                id="bloodgroup"
+                type="number"
+                name="pin"
+                onChange={getdata}
+                placeholder="Enter Six Digit Pin Code"
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <label id="labelss" for="passcode">
+                Select state
+              </label>
+              <br></br>
+              <select onChange={getdata} name="state">
+                <option value=""> state</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Bihar">Bihar</option>
+              </select>
+            </Form.Group>
+
+            <Form.Group>
+              <label id="labelss" for="passcode">
+                Select Country
+              </label>
+              <br></br>
+              <select onChange={getdata} name="nation">
+                <option value=""> state</option>
+                <option value="India">India</option>
+                <option value="Nepal">Nepal</option>
+              </select>
+            </Form.Group>
+
+            <Form.Group>
+              <label id="labelss" for="passcode">
+                Enter Addhaar Number
+              </label>
+              <br></br>
+              <input
+                id="bloodgroup"
+                type="number"
+                name="addhaar_no"
+                onChange={getdata}
+                placeholder="Enter Addhaar Number"
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <label id="labelss" for="passcode">
+                Select Gender
+              </label>
+              <br></br>
+              <select onChange={getdata} name="nation">
+                <option value=""> state</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </Form.Group>
+
+            <Form.Group>
+              <lable>Attach Your Image</lable>
+              <br></br>
+              <input type="file" name="image" onChange={getdata} />
+            </Form.Group>
+
+            <Form.Group>
+              <lable>Attach Your Signature</lable>
+              <br></br>
+              <input type="file" name="signature" onChange={getdata} />
+            </Form.Group>
+
+            <Form.Group>
+              <lable>Supportive Documents Images</lable>
+              <br></br>
+              <input type="file" name="file" onChange={getdata} />
+              <input type="file" name="file" onChange={getdata} />
+              <input type="file" name="file" onChange={getdata} />
             </Form.Group>
 
             <Form.Group>
               <div id="checking">
                 <input id="checkboxx" type="checkbox" onChange={check} />
                 <label id="paras">
-                  Receive relevant offers and promotional communication from
-                  Practo
+                  Above details are correct of my knowledge
                 </label>
               </div>
             </Form.Group>
 
             <Button
               disabled={
-                tick && inpval.name && inpval.email && inpval.password
+                tick &&
+                inpval.name &&
+                inpval.email &&
+                inpval.password &&
+                inpval.addhaar_no &&
+                inpval.file.length !== 0 &&
+                inpval.signature
                   ? false
                   : true
               }
@@ -272,7 +416,7 @@ const Signup = () => {
               Register
             </Button>
             <p id="parags">
-              Already Have an Account?{" "}
+              Already Register?{" "}
               <span>
                 <NavLink id="linkss" to="/Login">
                   Login
