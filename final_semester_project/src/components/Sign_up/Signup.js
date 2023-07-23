@@ -39,12 +39,9 @@ const Signup = () => {
   function getdata(e) {
     const { value, name } = e.target;
     console.log(e);
-
-    // console.log(value,name);
-
-    // console.log(e.target.files[0]);
-
-    if (name === "file" || name === "image" || name === "signature") {
+    if (name === "addhaar_no" && value.length > 12) {
+      alert("Enter 12 Digit No Only");
+    } else if (name === "file" || name === "image" || name === "signature") {
       convertBase64(e.target.files[0], name);
     } else if (
       name === "state" ||
@@ -108,31 +105,25 @@ const Signup = () => {
 
     await reader.readAsDataURL(convert);
     console.log(reader);
-    // reader.onload = () => {
-    //   if (name === "signature" || name === "image")
-    //     setInpval({ ...inpval, [name]: reader.result });
-    //   else {
-    //     setInpval((prev) => {
-    //       let file = [];
-    //       file = prev.file;
-    //       file.push(reader.result);
-    //       return { ...inpval, file };
-    //     });
-    //   }
-    //   console.log(reader.result);
-    // };
-  }
+    console.log(reader.result);
+    reader.onload = () => {
+      if (name === "signature" || name === "image")
+        setInpval({ ...inpval, [name]: reader.result });
 
-  console.log();
+      if (name === "file") {
+        setInpval({ ...inpval, [name]: [...inpval.file, reader.result] });
+      }
+      console.log(reader.result);
+    };
+  }
 
   async function addUser(data = {}) {
     try {
-      let req = await axios.post(process.env.SIGNUP_SEVER, {
-        body: JSON.stringify(data),
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
+      let req = await axios
+        .post("http://localhost:3035/signup", data)
+        .then((res) => {
+          return res;
+        });
       console.log(req);
       // let res = await req.json();
       // console.log(res);
@@ -362,7 +353,7 @@ const Signup = () => {
               </label>
               <br></br>
               <select onChange={getdata} name="nation">
-                <option value=""> state</option>
+                <option value="">Country</option>
                 <option value="India">India</option>
                 <option value="Nepal">Nepal</option>
               </select>
@@ -389,8 +380,8 @@ const Signup = () => {
                 Select Gender
               </label>
               <br></br>
-              <select onChange={getdata} name="nation">
-                <option value=""> state</option>
+              <select onChange={getdata} name="gender">
+                <option value=""> Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
@@ -459,26 +450,17 @@ const Signup = () => {
                   })
                 : ""}
             </div>
-
-            <Form.Group>
-              <div id="checking">
-                <input id="checkboxx" type="checkbox" onChange={check} />
-                <label id="paras">
-                  Above details are correct of my knowledge
-                </label>
-              </div>
-            </Form.Group>
             <br></br>
 
             <Button
               disabled={
-                tick &&
-                inpval.name &&
+                inpval.first_name &&
                 inpval.email &&
                 inpval.password &&
                 inpval.addhaar_no &&
                 inpval.file.length !== 0 &&
-                inpval.signature
+                inpval.signature &&
+                inpval.image
                   ? false
                   : true
               }

@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import { json, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { useDispatch, useSelector } from "react-redux";
-import { add3, Authaction } from "../Redux/Actions/actions";
+// import { useDispatch, useSelector } from "react-redux";
+// import { add3, Authaction } from "../Redux/Actions/actions";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
@@ -17,9 +17,9 @@ const Login = () => {
     password: "",
   });
 
-  const token = useSelector((store) => {
-    return store.token;
-  });
+  // const token = useSelector((store) => {
+  //   return store.token;
+  // });
 
   const [tick, setTick] = useState(false);
   const [data, setData] = useState([]);
@@ -38,24 +38,23 @@ const Login = () => {
       };
     });
   };
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const addData = (e) => {
     e.preventDefault();
     let { email, password } = inpval;
     findUser({ email, password });
   };
+
+  console.log(process.env.LogiInServer);
   async function findUser(data) {
     try {
-      let req = await fetch(
-        `https://odd-blue-scarab-kit.cyclic.app/signUp/logIn`,
-        {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-type": "application/json",
-          },
-        }
-      );
+      let req = await fetch(process.env.LogiInServer, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
       let res = await req.json();
       if (res.error)
         toast.error(res.error, {
@@ -63,7 +62,7 @@ const Login = () => {
         });
       else {
         alert(res.message);
-        await add3(dispatch, res.data);
+        // await add3(dispatch, res.data);
         history("/");
         // console.log(res);
       }
@@ -85,7 +84,7 @@ const Login = () => {
     <>
       <section>
         <div className="log-App">
-          <div className="loginn">
+          {/* <div className="loginn">
             <div id="log-design">
               <NavLink className="log" to="/Login">
                 Login
@@ -96,14 +95,14 @@ const Login = () => {
                 Register
               </NavLink>
             </div>
-          </div>
-          <hr className="lines"></hr>
+          </div> */}
+          {/* <hr className="lines"></hr> */}
           <div className="contain">
             <div className="picc">
-              <img
+              {/* <img
                 className="logos"
                 src="https://accounts.practo.com/static/images/illustration.png"
-              ></img>
+              ></img> */}
             </div>
 
             <div className="info">

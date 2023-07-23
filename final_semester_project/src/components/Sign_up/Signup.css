@@ -344,8 +344,25 @@ section .piccs{
   margin: auto;
 }
 
-.infos>#forms>input{
-display: grid;
-grid-template-columns: 1fr,1fr;
+input{
+  width: 100%;
+  color: black;
+  height: 4ch;
+}
+
+Button{
+  background-color: green;
+  width: 30px;
+}
+
+#checking{
+  display: flex;
+  gap:0px;
 
 }
+
+select{
+  width:100px;
+  height: 4ch;
+}
+

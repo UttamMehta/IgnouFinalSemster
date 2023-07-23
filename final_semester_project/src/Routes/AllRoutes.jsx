@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {Routes,Route}from "react-router-dom"
-import LogIn from '../components/LogIn/LogIn';
+import LogIn from '../components/Sign_up/Login';
 import AdminLogIn from '../components/AdminLogIn/AdminLogIn';
 import Home from '../components/Home/Home';
 import Timer from '../components/Timer/Timer';
