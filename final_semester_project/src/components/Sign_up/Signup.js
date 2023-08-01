@@ -470,7 +470,7 @@ const Signup = () => {
             <p id="parags">
               Already Register?{" "}
               <span>
-                <NavLink id="linkss" to="/Login">
+                <NavLink id="linkss" to="/Login" className={styles.login}>
                   Login
                 </NavLink>
               </span>{" "}

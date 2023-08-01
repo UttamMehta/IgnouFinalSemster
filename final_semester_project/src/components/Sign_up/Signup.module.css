@@ -383,3 +383,14 @@ justify-content: center;
 .infos{
   padding:0px 10px 0px 10px;
 }
+Button,#submit{
+  padding: 0px;
+  margin: 0px;
+  background-color: gold;
+  color: red;
+}
+
+.login{
+  color: #000000;
+  font-size: smaller;
+}
