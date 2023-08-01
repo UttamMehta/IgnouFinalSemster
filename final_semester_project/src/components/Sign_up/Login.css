@@ -224,3 +224,28 @@ section .picc{
 
 }
 
+/* .logApp{
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 1000px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  border: 2px solid red;
+  
+} */
+
+.log-App{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color:blanchedalmond;
+}
+.log-App>div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

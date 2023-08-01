@@ -60,7 +60,7 @@ const Signup = () => {
     }
   }
 
-  // console.log(inpval);
+  console.log(inpval);
 
 
   const addData = async (e) => {
@@ -101,16 +101,29 @@ const Signup = () => {
     //   file,
     // });
 
+    let data={...inpval};
     try {
-      let req = await fetch(`https://odd-blue-scarab-kit.cyclic.app/signUp`, {
+      let req = await fetch(`http://localhost:3035/signup`,{
         method: "POST",
         body: JSON.stringify(inpval),
         headers: {
           "Content-type": "application/json",
-        },
+        }
       });
       let res = await req.json();
     console.log(res);
+
+    if(res.message){
+      toast.success(res.message, {
+        position: "top-center",
+      });
+      alert("Signup Successfull");
+    }
+    else{
+      toast.error(res.error, {
+        position: "top-center",
+      });
+    }
     }
     catch(err){
       console.log(err);

@@ -45,10 +45,9 @@ const Login = () => {
     findUser({ email, password });
   };
 
-  console.log(process.env.LogiInServer);
   async function findUser(data) {
     try {
-      let req = await fetch(process.env.LogiInServer, {
+      let req = await fetch(`http://localhost:3035/login`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -84,26 +83,7 @@ const Login = () => {
     <>
       <section>
         <div className="log-App">
-          {/* <div className="loginn">
-            <div id="log-design">
-              <NavLink className="log" to="/Login">
-                Login
-              </NavLink>
-            </div>
-            <div id="sign-design">
-              <NavLink className="sign" to="/Signup">
-                Register
-              </NavLink>
-            </div>
-          </div> */}
-          {/* <hr className="lines"></hr> */}
-          <div className="contain">
-            <div className="picc">
-              {/* <img
-                className="logos"
-                src="https://accounts.practo.com/static/images/illustration.png"
-              ></img> */}
-            </div>
+        
 
             <div className="info">
               <Form id="formm">
@@ -133,15 +113,11 @@ const Login = () => {
                   />
                 </Form.Group>
 
-                <Form.Group>
-                  <input id="check" type="checkbox" onChange={check} />
-                  <label id="para">Remember me for 30 days</label>
-                </Form.Group>
 
                 <Button
                   id="submit"
                   disabled={
-                    tick && inpval.email && inpval.password ? false : true
+                    inpval.email && inpval.password ? false : true
                   }
                   onClick={addData}
                   type="submit"
@@ -149,18 +125,14 @@ const Login = () => {
                   Login
                 </Button>
                 <p id="parag">
-                  Don't Have an Account{" "}
-                  <span>
-                    <NavLink id="links" to="/Signup">
+                  Don't Have an Account?{" "} <NavLink id="links" to="/register">
                       Register
                     </NavLink>
-                  </span>{" "}
                 </p>
               </Form>
               <ToastContainer />
             </div>
           </div>
-        </div>
       </section>
     </>
   );
