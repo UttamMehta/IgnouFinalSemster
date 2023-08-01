@@ -334,20 +334,25 @@ section .piccs{
 
 }
  */
-
+.infos{
+  width: 50%;
+  align-items: center;
+  background-color:cadetblue;
+}
 
 #forms {
-  width: 50%;
   padding: 2%;
   background: rgb(255, 255, 255/0.9);
   box-shadow: #000000 0px 3px 8px;
-  margin: auto;
+  /* width: 100%;
+  margin: auto; */
 }
 
 input{
-  width: 100%;
+  width: 99%;
   color: black;
   height: 4ch;
+  border-radius: 4px;
 }
 
 Button{
@@ -366,3 +371,15 @@ select{
   height: 4ch;
 }
 
+section{
+  align-items: center;
+  margin: auto;
+}
+#allid{
+width: 100%;
+justify-content: center;
+}
+
+.infos{
+  padding:0px 10px 0px 10px;
+}

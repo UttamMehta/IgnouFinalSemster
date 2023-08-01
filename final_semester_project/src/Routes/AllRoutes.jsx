@@ -5,8 +5,6 @@ import LogIn from '../components/Sign_up/Login';
 import AdminLogIn from '../components/AdminLogIn/AdminLogIn';
 import Home from '../components/Home/Home';
 import Timer from '../components/Timer/Timer';
-import Board from '../ListedComponents/Board/Board';
-import Dashboard from '../ListedComponents/Dashboard/Dashboard';
 import Signup from '../components/Sign_up/Signup';
 
 

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
-import "./Signup.css";
+import styles from "./Signup.module.css";
 
 const Signup = () => {
   const history = useNavigate();
@@ -157,8 +157,8 @@ const Signup = () => {
 
   return (
     <>
-      <section>
-        <div className="infos">
+      <section className={styles.all} id={styles.allid}>
+        <div className={styles.infos}>
           <Form id="forms">
             <Form.Group>
               <h2 id="joinn">Registration Form</h2>
@@ -232,22 +232,19 @@ const Signup = () => {
                 name="email"
                 onChange={getdata}
                 placeholder="Enter Your Email"
-                style={{ width: "100%" }}
               />
             </Form.Group>
             <br></br>
-
             <Form.Group>
               <label id="labelss" for="passcode">
                 Create Password
               </label>
               <br></br>
-              <input
-                id="passcode"
-                type="password"
-                name="password"
-                onChange={getdata}
-                placeholder="Enter Password"
+              <input  
+                 type="password"
+                 name="password"
+                 onChange={getdata}
+                 placeholder="Enter Password"
               />
             </Form.Group>
             <br></br>
@@ -257,7 +254,6 @@ const Signup = () => {
               </label>
               <br></br>
               <input
-                id="passcode"
                 type="text"
                 name="father_name"
                 onChange={getdata}
@@ -272,7 +268,7 @@ const Signup = () => {
               </label>
               <br></br>
               <input
-                id="passcode"
+              
                 type="text"
                 name="mother_name"
                 onChange={getdata}
