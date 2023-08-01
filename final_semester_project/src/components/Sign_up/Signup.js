@@ -60,7 +60,9 @@ const Signup = () => {
     }
   }
 
-  console.log(inpval);
+  // console.log(inpval);
+
+
   const addData = async (e) => {
     e.preventDefault();
 
@@ -81,24 +83,39 @@ const Signup = () => {
       addhaar_no,
       file = [],
     } = inpval;
-    await addUser({
-      first_name,
-      middle_name,
-      last_name,
-      email,
-      password,
-      father_name,
-      mother_name,
-      dob,
-      blood_group,
-      address,
-      gender,
-      image,
-      signature,
-      addhaar_no,
-      file,
-    });
-  };
+    // await addUser({
+    //   first_name,
+    //   middle_name,
+    //   last_name,
+    //   email,
+    //   password,
+    //   father_name,
+    //   mother_name,
+    //   dob,
+    //   blood_group,
+    //   address,
+    //   gender,
+    //   image,
+    //   signature,
+    //   addhaar_no,
+    //   file,
+    // });
+
+    try {
+      let req = await fetch(`https://odd-blue-scarab-kit.cyclic.app/signUp`, {
+        method: "POST",
+        body: JSON.stringify(inpval),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      let res = await req.json();
+    console.log(res);
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
 
   async function convertBase64(convert, name) {
     let reader = new FileReader();
