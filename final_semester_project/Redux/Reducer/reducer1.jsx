@@ -1,8 +1,6 @@
 /** @format */
 const initialState = {
   user: {},
-  appoint: {},
-  appointuser: {},
   logindetail: {},
   isAuth: false,
   token:"",
@@ -34,6 +32,7 @@ const reducer = (state = initialState, action) => {
   // if (action.type === 'logout') {
   //   state.isAuth = action.isAuth;
   // }
+  if(action.type==="")
   return { ...state };
 };
 
