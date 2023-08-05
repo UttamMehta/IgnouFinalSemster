@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import { json, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-// import { useDispatch, useSelector } from "react-redux";
-// import { add3, Authaction } from "../Redux/Actions/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { add3, Authaction } from "../../../Redux/Actions/actions";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
@@ -64,6 +64,7 @@ const Login = () => {
         });
       else {
         alert(res.message);
+        console.log(res);
         await add3(dispatch, res.data);
         // history("/");
         // console.log(res);
@@ -107,7 +108,7 @@ const Login = () => {
 
                 <Form.Group>
                   <label id="labelss" for="passcode">
-                    Password
+                    Password 1234 default
                   </label>
                   <input
                     id="passcode"
