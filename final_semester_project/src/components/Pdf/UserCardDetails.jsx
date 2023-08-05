@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 import PdfTemplate from './PdfTemplate';
 
-const UserCardDetails = ({ user }) => {
+const UserCardDetails = () => {
+  const [user,setUser]=useState({email:"Uttam@gmail.com",name:"Uttam"})
   const handleDownloadPDF = () => {
     // Create a PDF blob from the PDF template component
-    const pdfBlob = PdfTemplate(user).toBlob();
+    const pdfBlob = PdfTemplate().toBlob();
 
-    // Save the blob as a PDF file using file-saver
-    saveAs(pdfBlob, 'user_details.pdf');
+    // // Save the blob as a PDF file using file-saver
+    // saveAs(pdfBlob, 'user_details.pdf');
   };
 
   return (
@@ -22,4 +23,4 @@ const UserCardDetails = ({ user }) => {
   );
 };
 
-export default UserCardDetail;
+export default UserCardDetails;

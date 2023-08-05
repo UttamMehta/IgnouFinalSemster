@@ -7,6 +7,7 @@ import Home from '../components/Home/Home';
 import Timer from '../components/Timer/Timer';
 import Signup from '../components/Sign_up/Signup';
 import User from "../components/UserPage/User"
+import UserCardDetail from '../components/Pdf/UserCardDetails';
 
 
 
@@ -18,7 +19,9 @@ function AllRoutes(props) {
               <Route path="/register" element={<Signup/>}/>
               <Route path="/login" element={<LogIn/>}/>
               <Route path="/admin" element={<AdminLogIn/>}/>
-              <Route path='User' element={<User /> }/>
+              <Route path='/User' element={<User /> }/>
+              <Route path='/Card' element={<UserCardDetail /> }/>
+
               <Route path="*" element={<h1 style={{color:"red"}}>Error No Such Page</h1>}/>
         
             

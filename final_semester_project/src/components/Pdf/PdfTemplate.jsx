@@ -1,16 +1,19 @@
 
 import React from 'react';
-import { Page, Text, Document } from '@react-pdf/renderer';
+import { Page, Text, Document ,PDFViewer} from '@react-pdf/renderer';
 
-const PdfTemplate = ({ user }) => {
+const PdfTemplate = (props) => {
+    console.log(props);
   return (
+    <PDFViewer>
     <Document>
       <Page>
-        <Text>Name: {user.name}</Text>
-        <Text>Email: {user.email}</Text>
+        <Text>Name: abcd</Text>
+        {/* <Text>Email: {user.email}</Text> */}
         {/* Add more user details as needed */}
       </Page>
     </Document>
+    </PDFViewer>
   );
 };
 
