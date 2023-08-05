@@ -3,7 +3,7 @@ import QRCode from 'react-qr-code';
 
 export default function Qrcode() {
 
-    let token="gfjhvbfjkbhf"
+    let token="asbfijanfndfmfgbfgbmfgbmfgm;fg,bfgbmlbl;;vlbn"
 
   return (
     <div>
