@@ -56,9 +56,6 @@ const Login = () => {
         },
       });
       let res = await req.json();
-
-
-
       if (res.error)
         toast.error(res.error, {
           position: "top-center",
@@ -69,8 +66,6 @@ const Login = () => {
         await add3(dispatch, res.data);
         // history("/");
         // console.log(res);
-
-
       }
       // history("/");
       // alert(res.message);
