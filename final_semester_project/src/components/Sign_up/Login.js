@@ -5,7 +5,7 @@ import { json, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { add3, Authaction } from "../../../Redux/Actions/actions";
+import { add3, Authaction } from "../../Redux/Actions/actions";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
@@ -17,9 +17,9 @@ const Login = () => {
     password: "",
   });
 
-  // const token = useSelector((store) => {
-  //   return store.token;
-  // });
+  const token = useSelector((store) => {
+    return store;
+  });
 
   const [tick, setTick] = useState(false);
   const [data, setData] = useState([]);
@@ -38,13 +38,14 @@ const Login = () => {
       };
     });
   };
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const addData = (e) => {
     e.preventDefault();
     let { email, password } = inpval;
     findUser({ email, password });
   };
 
+  console.log(token)
   async function findUser(data) {
     try {
       let req = await fetch(`http://localhost:3035/login`, {
@@ -64,7 +65,7 @@ const Login = () => {
         });
       else {
         alert(res.message);
-        console.log(res);
+        // console.log(res);
         await add3(dispatch, res.data);
         // history("/");
         // console.log(res);

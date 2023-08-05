@@ -3,15 +3,20 @@ import AllRoutes from "./Routes/AllRoutes";
 import Navbar from "./components/Navbar/Navbar";
 import { SessionProvider } from "next-auth/react";
 import Footer from "./components/footer/Footer";
+import { store } from './Redux/store/Redux_store';
+import { Provider } from 'react-redux';
+import { mystore } from "./Redux/store/Redux_store";
 
 function App() {
   return (
     <div>
+      <Provider store={store}>
       <BrowserRouter>
         <Navbar />
         <AllRoutes />
         <Footer />
       </BrowserRouter>
+      </Provider>
     </div>
   );
 }

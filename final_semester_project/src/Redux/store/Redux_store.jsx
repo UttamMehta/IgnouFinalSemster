@@ -9,4 +9,4 @@ import { logger } from 'redux-logger';
 //   todo: subreducer,
 //   aauth: Authreduce,
 // });
-export const mysstore = legacy_createStore(reducer, applyMiddleware(logger));
+export const store = legacy_createStore(reducer, applyMiddleware(logger));
