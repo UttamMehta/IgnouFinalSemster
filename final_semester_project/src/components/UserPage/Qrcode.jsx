@@ -6,8 +6,8 @@ export default function Qrcode() {
     let token="asbfijanfndfmfgbfgbmfgbmfgm;fg,bfgbmlbl;;vlbn"
 
   return (
-    <div>
-      <QRCode value={token} />
-    </div>
+   
+      <QRCode value={token} id='qrcode'/>
+
   )
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 // import PdfTemplate from './PdfTemplate';
 import jsPDF from "jspdf"
+import Qrcode from '../UserPage/Qrcode';
 
 const UserCardDetails = () => {
   const [user,setUser]=useState({email:"Uttam@gmail.com",name:"Uttam"})
@@ -18,11 +19,11 @@ const UserCardDetails = () => {
   const downloadPDF = () => {
     const userDetails = {
       name: "John Doe",
-      fatherName: "Jane Doe",
+      fatherName: "Abcd",
       dob: "January 1, 1990",
       gender: "Male",
-      photo: "path/to/passport-photo.jpg",
-      signature: "path/to/signature.jpg",
+      photo: "",
+      signature: "",
       universityLogo: "path/to/university-logo.jpg",
     };
     const pdf = new jsPDF("p", "mm", [100, 80]);
@@ -30,14 +31,20 @@ const UserCardDetails = () => {
     pdf.setFontSize(10);
      let offsetY = 0;
      let offsetX=0;
+     console.log();
       pdf.addImage("https://upload.wikimedia.org/wikipedia/commons/f/fe/Seal_of_Odisha.png", "JPEG", 0, 0, 30, 30);
-   
-  
+      // pdf.addImage(, "JPEG", 60, 0, 30, 30);
+      const qrCodeCanvas = document.getElementById('qrcode');
+      const dataURL = qrCodeCanvas.firstChild.toDataURL('image/jpeg', 1.0);
+      // console.log(dataURL);
+    // console.log(qrCodeCanvas.firstChild);
+      // const imageData = qrCodeCanvas.toDataURL();
+      // console.log(imageData);
     // pdf.text(5, 60, "User Details Card");
-    pdf.text(5, 50, `Name: ${userDetails.name}`);
-    pdf.text(5, 55, `Father's Name: ${userDetails.fatherName}`);
-    pdf.text(5, 60, `Date of Birth: ${userDetails.dob}`);
-    pdf.text(5, 65, `Gender: ${userDetails.gender}`);
+    pdf.text(5, 40, `Name: ${userDetails.name}`);
+    pdf.text(5, 48, `Father: ${userDetails.fatherName}`);
+    pdf.text(5, 56, `DOB: ${userDetails.dob}`);
+    pdf.text(5, 64, `Gender: ${userDetails.gender}`);
 
     // const imagesDiv = document.querySelector(".images");
     // const images = imagesDiv.getElementsByTagName("img");
@@ -56,6 +63,8 @@ const UserCardDetails = () => {
       <h2>User Details</h2>
       <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
+      <Qrcode />
+      <br />
       {/* Add more user details as needed */}
       <button onClick={downloadPDF} style={{width:"10%",backgroundColor:"white",height:"35px"}}>Download as PDF</button>
      
