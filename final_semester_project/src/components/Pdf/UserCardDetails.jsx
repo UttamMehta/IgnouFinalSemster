@@ -25,7 +25,6 @@ const UserCardDetails = () => {
       photo: "https://i.pinimg.com/originals/6b/7e/d6/6b7ed698713c09ad9e6afc7dcb996a09.jpg",
       blood_group:"B+",
       signature: "https://pbs.twimg.com/media/D9z0TuNU4AAp6HZ?format=jpg&name=4096x4096",
-      universityLogo: "path/to/university-logo.jpg",
       enrollment_no:"65451412154",
     };
     const pdf = new jsPDF("p", "mm", [110, 100]);
