@@ -33,9 +33,10 @@ const UserCardDetails = () => {
      let offsetX=0;
      console.log();
       pdf.addImage("https://upload.wikimedia.org/wikipedia/commons/f/fe/Seal_of_Odisha.png", "JPEG", 0, 0, 30, 30);
+      pdf.addImage("https://static.vecteezy.com/system/resources/previews/006/470/649/original/university-education-logo-design-template-free-vector.jpg","JPEG",40,0,20,40)
       // pdf.addImage(, "JPEG", 60, 0, 30, 30);
-      const qrCodeCanvas = document.getElementById('qrcode');
-      const dataURL = qrCodeCanvas.firstChild.toDataURL('image/jpeg', 1.0);
+      // const qrCodeCanvas = document.getElementById('qrcode');
+      // const dataURL = qrCodeCanvas.firstChild.toDataURL('image/jpeg', 1.0);
       // console.log(dataURL);
     // console.log(qrCodeCanvas.firstChild);
       // const imageData = qrCodeCanvas.toDataURL();
