@@ -22,8 +22,9 @@ const UserCardDetails = () => {
       fatherName: "Abcd",
       dob: "January 1, 1990",
       gender: "Male",
-      photo: "",
-      signature: "",
+      photo: "https://i.pinimg.com/originals/6b/7e/d6/6b7ed698713c09ad9e6afc7dcb996a09.jpg",
+      blood_group:"B+",
+      signature: "https://pbs.twimg.com/media/D9z0TuNU4AAp6HZ?format=jpg&name=4096x4096",
       universityLogo: "path/to/university-logo.jpg",
     };
     const pdf = new jsPDF("p", "mm", [100, 80]);
@@ -32,8 +33,10 @@ const UserCardDetails = () => {
      let offsetY = 0;
      let offsetX=0;
      console.log();
-      pdf.addImage("https://upload.wikimedia.org/wikipedia/commons/f/fe/Seal_of_Odisha.png", "JPEG", 0, 0, 30, 30);
-      pdf.addImage("https://static.vecteezy.com/system/resources/previews/006/470/649/original/university-education-logo-design-template-free-vector.jpg","JPEG",40,0,20,40)
+      pdf.addImage("https://upload.wikimedia.org/wikipedia/commons/f/fe/Seal_of_Odisha.png", "JPEG", 0, 5, 30, 30);
+      pdf.addImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOIe0E4d42KwXt6c_WZ8yFjyMOXDdrQ-gXbaidBzmQiQ&s","JPEG",33,5,40,30);
+      pdf.addImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOIe0E4d42KwXt6c_WZ8yFjyMOXDdrQ-gXbaidBzmQiQ&s","JPEG",33,35,20,40);
+
       // pdf.addImage(, "JPEG", 60, 0, 30, 30);
       // const qrCodeCanvas = document.getElementById('qrcode');
       // const dataURL = qrCodeCanvas.firstChild.toDataURL('image/jpeg', 1.0);
