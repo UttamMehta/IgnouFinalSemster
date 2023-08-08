@@ -7,7 +7,7 @@ export default function Qrcode() {
 
   return (
    
-      <QRCode value={token} id='qrcode'/>
+      <QRCode value={token} />
 
   )
 }
