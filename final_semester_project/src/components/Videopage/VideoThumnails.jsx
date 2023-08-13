@@ -8,10 +8,8 @@ const [page,setPage]=useState(1);
 const [quary,setQuary]=useState("Bca 1st Semster");
 
 useEffect(()=>{
-    let url="";
+    let url=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${quary}&key=AIzaSyCWFfdxzshap5vCja1ic4qbz7SjMLVBB1w`;
    getData(url);
-
-
 },[quary,page])
 
 function getData(url){
