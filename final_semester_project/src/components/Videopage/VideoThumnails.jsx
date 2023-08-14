@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function VideoThumnails() {
 const [data,setData]=useState([]);
 const [page,setPage]=useState(1);
-const [quary,setQuary]=useState("Bca 1st Semster");
+const [quary,setQuary]=useState("Ignou Bca 1st Semster");
 
 useEffect(()=>{
     let url=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${quary}&key=AIzaSyCWFfdxzshap5vCja1ic4qbz7SjMLVBB1w`;
@@ -34,22 +34,21 @@ setQuary(e.target.value);
   return (
     <div>
       <div>
-        <div style={{alignItems:"center",margin:"auto",display:"flex",justifyContent:"center"}}>
+        <div style={{alignItems:"center",margin:"auto",display:"flex",justifyContent:"center",marginBottom:"10px"}}>
           <select name="" id="" onChange={updateQuary}>
-            <option value="Bca 1st Semester">1st Semseter</option>
-            <option value="Bca 2nd Semester">2nd Semester</option>
-            <option value="Bca 3rd Semester">3rd Semester</option>
-            <option value="Bca 4th semester">4th Semester</option>
-            <option value="Bca 5th Semester">5th Semester</option>
-            <option value="Bca 6th Semester">6th Semester</option>
+            <option value="Ignou Bca 1st Semester">1st Semseter</option>
+            <option value="Ignou Bca 2nd Semester">2nd Semester</option>
+            <option value="Ignou Bca 3rd Semester">3rd Semester</option>
+            <option value="Ignou Bca 4th semester">4th Semester</option>
+            <option value="Ignou Bca 5th Semester">5th Semester</option>
+            <option value="Ignou Bca 6th Semester">6th Semester</option>
           </select>
         </div>
-        {/* <div>
+        <div>
          <select name="" id=""></select>
-        </div> */}
+        </div>
       </div>
     <div>
-
         {data.length===0?<Loading/>:data.map((el,i)=>{
         
       return <Link to={`/play/${el.id.videoId}`} key={el.etag} style={{display:"flex",alignItems:"center",justifyContent:"center",marginBottom:"10px"}}> <img src={el.snippet.thumbnails.high.url} alt="el.snippet.channelId" key={el.id.videoId} style={{width:"60%",gap:"10px",height:"100%"}}/></Link> 
