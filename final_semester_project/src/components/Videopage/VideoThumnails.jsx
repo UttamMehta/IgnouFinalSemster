@@ -18,7 +18,7 @@ async function getData(url){
     let res=await req.json();
     // setData(res);
     console.log(res.items);
-    setData(res.items);
+    // setData(res.items);
   } catch (error) {
     console.log(error);
   }
@@ -34,8 +34,8 @@ setQuary(e.target.value);
   return (
     <div>
       <div>
-        <div style={{alignItems:"center",margin:"auto",display:"flex",justifyContent:"center",marginBottom:"10px"}}>
-          <select name="" id="" onChange={updateQuary}>
+        <div style={{alignItems:"center",margin:"auto",display:"flex",justifyContent:"center",marginBottom:"10px",gap:"10px"}}>
+        Apply Filter <select name="" id="" onChange={updateQuary}>
             <option value="Ignou Bca 1st Semester">1st Semseter</option>
             <option value="Ignou Bca 2nd Semester">2nd Semester</option>
             <option value="Ignou Bca 3rd Semester">3rd Semester</option>
@@ -44,9 +44,9 @@ setQuary(e.target.value);
             <option value="Ignou Bca 6th Semester">6th Semester</option>
           </select>
         </div>
-        <div>
+        {/* <div>
          <select name="" id=""></select>
-        </div>
+        </div> */}
       </div>
     <div>
         {data.length===0?<Loading/>:data.map((el,i)=>{
