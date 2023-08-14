@@ -27,14 +27,15 @@ async function getData(url){
 
 
 function updateQuary(e){
+  setData([]);
 setQuary(e.target.value);
 }
 
   return (
     <div>
       <div>
-        <div>
-          <select name="" id="">
+        <div style={{alignItems:"center",margin:"auto",display:"flex",justifyContent:"center"}}>
+          <select name="" id="" onChange={updateQuary}>
             <option value="Bca 1st Semester">1st Semseter</option>
             <option value="Bca 2nd Semester">2nd Semester</option>
             <option value="Bca 3rd Semester">3rd Semester</option>
