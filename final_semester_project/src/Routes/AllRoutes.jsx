@@ -8,6 +8,7 @@ import Timer from '../components/Timer/Timer';
 import Signup from '../components/Sign_up/Signup';
 import User from "../components/UserPage/User"
 import UserCardDetail from '../components/Pdf/UserCardDetails';
+import VideoThumnails from '../components/Videopage/VideoThumnails';
 
 
 
@@ -21,6 +22,7 @@ function AllRoutes(props) {
               <Route path="/admin" element={<AdminLogIn/>}/>
               <Route path='/User' element={<User /> }/>
               <Route path='/Card' element={<UserCardDetail /> }/>
+              <Route path='/Video' element={<VideoThumnails /> }/>
 
               <Route path="*" element={<h1 style={{color:"red"}}>Error No Such Page</h1>}/>
         

@@ -12,11 +12,17 @@ useEffect(()=>{
    getData(url);
 },[quary])
 
-function getData(url){
-    let req=fetch(url);
-    let res=req.json();
+async function getData(url){
+  try {
+    let req=await fetch(url);
+    let res=await req.json();
     // setData(res);
-    console.log(res);
+    console.log(res.items);
+    setData(res.items);
+  } catch (error) {
+    console.log(error);
+  }
+   
 }
 
 
@@ -44,7 +50,8 @@ setQuary(e.target.value);
     <div>
 
         {data.length===0?<Loading/>:data.map((el,i)=>{
-      <Link to="/play"> <img src={el.snippet.thumbnails} alt="el.snippet.channelId" /></Link> 
+        
+      return <Link to="/play" key={el.etag} style={{display:"flex",alignItems:"center",justifyContent:"center",marginBottom:"10px"}}> <img src={el.snippet.thumbnails.high.url} alt="el.snippet.channelId" key={el.id.videoId} style={{width:"60%",gap:"10px",height:"100%"}}/></Link> 
         })}
     </div>
     </div>
