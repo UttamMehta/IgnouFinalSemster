@@ -9,6 +9,7 @@ import Signup from '../components/Sign_up/Signup';
 import User from "../components/UserPage/User"
 import UserCardDetail from '../components/Pdf/UserCardDetails';
 import VideoThumnails from '../components/Videopage/VideoThumnails';
+import VideoPlaySingle from '../components/Videopage/VideoPlaySingle';
 
 
 
@@ -23,6 +24,8 @@ function AllRoutes(props) {
               <Route path='/User' element={<User /> }/>
               <Route path='/Card' element={<UserCardDetail /> }/>
               <Route path='/Video' element={<VideoThumnails /> }/>
+              <Route path='/play/:id' element={<VideoPlaySingle /> }/>
+
 
               <Route path="*" element={<h1 style={{color:"red"}}>Error No Such Page</h1>}/>
         
