@@ -51,7 +51,7 @@ setQuary(e.target.value);
 
         {data.length===0?<Loading/>:data.map((el,i)=>{
         
-      return <Link to="/play" key={el.etag} style={{display:"flex",alignItems:"center",justifyContent:"center",marginBottom:"10px"}}> <img src={el.snippet.thumbnails.high.url} alt="el.snippet.channelId" key={el.id.videoId} style={{width:"60%",gap:"10px",height:"100%"}}/></Link> 
+      return <Link to={`/play/${el.id.videoId}`} key={el.etag} style={{display:"flex",alignItems:"center",justifyContent:"center",marginBottom:"10px"}}> <img src={el.snippet.thumbnails.high.url} alt="el.snippet.channelId" key={el.id.videoId} style={{width:"60%",gap:"10px",height:"100%"}}/></Link> 
         })}
     </div>
     </div>
