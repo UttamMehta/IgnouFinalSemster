@@ -10,7 +10,7 @@ const [quary,setQuary]=useState("Bca 1st Semster");
 useEffect(()=>{
     let url=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${quary}&key=AIzaSyCWFfdxzshap5vCja1ic4qbz7SjMLVBB1w`;
    getData(url);
-},[quary,page])
+},[quary])
 
 function getData(url){
     let req=fetch(url);
@@ -19,6 +19,10 @@ function getData(url){
     console.log(res);
 }
 
+
+function updateQuary(e){
+setQuary(e.target.value);
+}
 
   return (
     <div>
@@ -33,6 +37,9 @@ function getData(url){
             <option value="Bca 6th Semester">6th Semester</option>
           </select>
         </div>
+        {/* <div>
+         <select name="" id=""></select>
+        </div> */}
       </div>
     <div>
 
