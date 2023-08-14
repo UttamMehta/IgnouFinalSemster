@@ -18,7 +18,7 @@ async function getData(url){
     let res=await req.json();
     // setData(res);
     console.log(res.items);
-    // setData(res.items);
+    setData(res.items);
   } catch (error) {
     console.log(error);
   }
