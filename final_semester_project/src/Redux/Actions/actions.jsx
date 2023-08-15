@@ -51,3 +51,20 @@ export const Authaction = (dispatch, detail) => {
 //     isAuth: false,
 //   });
 // };
+
+
+export default function reduxThunkActionCreator(url) {
+  return function reduxThunkAction(dispatch, getState) {
+    if (getState().products.length === 0) {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          dispatch({
+            type: "thumbnails",
+            data,
+          });
+        });
+    }
+  };
+}
