@@ -21,9 +21,9 @@ const reducer = (state = initialState, action) => {
     state.token="";
     state.user="";
   }
-  // if (action.type === 'logout') {
-  //   state.isAuth = action.isAuth;
-  // }
+  if (action.type === 'logout') {
+    state.isAuth = action.isAuth;
+  }
   if(action.type==="")
   return { ...state };
 };
