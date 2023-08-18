@@ -5,6 +5,7 @@ const initialState = {
   isAuth: true,
   token:"",
   thumbnails:"",
+  youtube:"",
 };
 
 //complete the reducer function
