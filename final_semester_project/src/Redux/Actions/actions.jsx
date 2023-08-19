@@ -55,7 +55,7 @@ export const Authaction = (dispatch, detail) => {
 
 export default function reduxThunkActionCreator(url) {
   return function reduxThunkAction(dispatch, getState) {
-    if (getState().products.length === 0) {
+    if (getState().thumbnails.length === 0) {
       fetch(url)
         .then((res) => res.json())
         .then((data) => {

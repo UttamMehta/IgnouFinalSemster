@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Loading from '../Loader/Loading';
 import { Link } from 'react-router-dom';
 import reduxThunkActionCreator from "./Redux_Pipeline/electronicThunkAction";
+import {dispatch,useSelector} from "react-redux";
 
 export default function VideoThumnails() {
 const [data,setData]=useState([]);
