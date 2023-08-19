@@ -1,38 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../Loader/Loading';
 import { Link } from 'react-router-dom';
-import reduxThunkActionCreator from "./Redux_Pipeline/electronicThunkAction";
-import {dispatch,useSelector} from "react-redux";
+import reduxThunkActionCreator from "../../Redux/Redux_Pipeline/Youtube";
+import {useDispatch,useSelector} from "react-redux";
 
 export default function VideoThumnails() {
+  const dispatch = useDispatch();
 const [data,setData]=useState([]);
 const [page,setPage]=useState(1);
 const [quary,setQuary]=useState("Ignou Bca 1st Semster");
-const electronicData = useSelector((storeData) => {
-  return storeData.thumbnails;
-});
-console.log(electronicData);
+// const electronicData = useSelector((storeData) => {
+//   return storeData.thumbnails;
+// });
+// console.log(electronicData);
+console.log(useSelector((store)=>{return store}))
 
 useEffect(()=>{
     let url=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${quary}&key=AIzaSyCWFfdxzshap5vCja1ic4qbz7SjMLVBB1w`;
-  //  getData(url);
-  dispatch(
-    reduxThunkActionCreator(
-      url
-    )
-  );
-},[])
+   getData(url);
+  // dispatch(
+  //   reduxThunkActionCreator(
+  //     url
+  //   )
+  // );
+},[quary])
 
 async function getData(url){
-  // try {
-  //   let req=await fetch(url);
-  //   let res=await req.json();
-  //   // setData(res);
-  //   console.log(res.items);
-  //   setData(res.items);
-  // } catch (error) {
-  //   console.log(error);
-  // }
+  try {
+    let req=await fetch(url);
+    let res=await req.json();
+    // setData(res);
+    console.log(res.items);
+    setData(res.items);
+  } catch (error) {
+    console.log(error);
+  }
 
    
 }
