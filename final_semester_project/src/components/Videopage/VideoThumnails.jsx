@@ -13,7 +13,7 @@ const [quary,setQuary]=useState("Ignou Bca 1st Semster");
 //   return storeData.thumbnails;
 // });
 // console.log(electronicData);
-console.log(useSelector((store)=>{return store}))
+// console.log(useSelector((store)=>{return store}))
 
 useEffect(()=>{
     let url=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${quary}&key=AIzaSyCWFfdxzshap5vCja1ic4qbz7SjMLVBB1w`;
