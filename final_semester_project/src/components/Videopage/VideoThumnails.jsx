@@ -34,6 +34,7 @@ async function getData(url){
     setData(res.items);
   } catch (error) {
     console.log(error);
+    alert(error);
   }
 
    
