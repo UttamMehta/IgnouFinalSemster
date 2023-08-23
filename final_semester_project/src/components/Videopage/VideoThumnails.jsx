@@ -33,7 +33,7 @@ async function getData(url){
     console.log(res.items);
     setData(res.items);
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     alert(error);
   }
 
