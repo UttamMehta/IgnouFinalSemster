@@ -10,6 +10,7 @@ import User from "../components/UserPage/User"
 import UserCardDetail from '../components/Pdf/UserCardDetails';
 import VideoThumnails from '../components/Videopage/VideoThumnails';
 import VideoPlaySingle from '../components/Videopage/VideoPlaySingle';
+import NewsComponent from '../components/NewsPages/NewsComponent';
 
 
 
@@ -25,6 +26,7 @@ function AllRoutes(props) {
               <Route path='/Card' element={<UserCardDetail /> }/>
               <Route path='/Video' element={<VideoThumnails /> }/>
               <Route path='/play/:id' element={<VideoPlaySingle /> }/>
+              <Route path='/news' element={<NewsComponent />} />
 
 
               <Route path="*" element={<h1 style={{color:"red"}}>Error No Such Page</h1>}/>
