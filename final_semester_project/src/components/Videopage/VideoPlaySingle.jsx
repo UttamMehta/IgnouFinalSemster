@@ -12,6 +12,7 @@ export default function VideoPlaySingle() {
 
   return (
     <div style={{display:"flex",alignItems:"center",justifyContent:"center",marginBottom:"10px"}}>
+      
       <iframe width="900" height="500" src={`https://www.youtube.com/embed/${id}`} allowfullscreen></iframe>
     </div>
   )
