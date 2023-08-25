@@ -16,11 +16,10 @@ export default function Email() {
             alert(response.data);
           })
           .catch(error => {
-            console.error(error);
+            // console.error(error);
             alert(error.response.data);
           });
       };
-    
 
       return (
         <div className={styles.email}>
