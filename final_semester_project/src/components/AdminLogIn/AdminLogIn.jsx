@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import Email from './Email';
+import axios from 'axios';
 
 function AdminLogIn(props) {
 
@@ -25,25 +26,23 @@ function AdminLogIn(props) {
     }
 
     if(admin)
-    return <Email />
+    return <Navigate to="/email" />;
     
 
     console.log(state);
 
     return (
-        <div>
-            <form onSubmit={checkadmin}>
-                <lable>
-                    <input type='email' name="email" onChange={updateState}/>
-                    Enter Your Email
-                </lable><br/>
-                <lable>
-                    <input type='password' name="password" onChange={updateState}/>
-                    Enter Your Password
-                </lable><br/>
-            <button disabled={state.password&&state.email?false:true}>Submit</button>
-            </form>
-            
+          <div className="login-form">
+      <h2>Login</h2>
+      <form onSubmit={checkadmin}>
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email"onChange={updateState} />
+
+        <label htmlFor="password">Password:</label>
+        <input type="password" id="password" name="password" onChange={updateState}/>
+
+        <button type="submit">Login</button>
+      </form>
         </div>
     );
 }

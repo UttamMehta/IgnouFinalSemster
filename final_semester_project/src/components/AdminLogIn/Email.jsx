@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useState} from 'react';
+import axios from 'axios';
 
 export default function Email() {
     const [emailData, setEmailData] = useState({
@@ -17,7 +18,7 @@ export default function Email() {
           });
       };
     
-      
+
       return (
         <div className="App">
           <input
