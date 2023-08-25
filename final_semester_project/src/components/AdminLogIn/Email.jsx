@@ -17,7 +17,7 @@ export default function Email() {
           })
           .catch(error => {
             console.error(error);
-            alert("some error occur try later");
+            alert(error.response.data);
           });
       };
     
