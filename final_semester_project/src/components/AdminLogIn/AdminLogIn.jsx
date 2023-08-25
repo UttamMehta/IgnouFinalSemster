@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function AdminLogIn(props) {
 
     const [state,setState]=useState({email:"",password:""});
+    const [admin,setAdmin]=useState(false);
 
 
     function updateState(e){
@@ -12,6 +13,7 @@ function AdminLogIn(props) {
 
     function checkadmin(e){
         e.preventDefault();
+        if(state.email==="Admin"&&state.password==="1234")
         alert ("admin chekced  sucessful");
     }
 
