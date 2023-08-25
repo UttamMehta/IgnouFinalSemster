@@ -1,18 +1,33 @@
 /* src/components/NewsComponent.css */
-.news-container {
+.newscontainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
   
-  .news-item {
+  .newsitem {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
     max-width: 300px;
   }
   
-  .news-item img {
+  
+  .sort input{
+    width: 50%; 
+  }
+
+  .sort select{
+    width: 10%;
+  }
+  .sort{
+    margin-top: 5px;
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+  }
+  .newsitem img {
     width: 100%;
     height: auto;
   }
@@ -32,9 +47,14 @@
   }
   
   .pagination button.active {
-    background-color: #ccc;
+    background-color:green;
   }
-  
+  .news-container>img{
+    width: 100%;
+  }
+  .all div{
+    justify-content: center;
+  }
   @media (max-width: 768px) {
     .news-container {
       flex-direction: column;
