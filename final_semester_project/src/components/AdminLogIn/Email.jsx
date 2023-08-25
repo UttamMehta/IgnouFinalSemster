@@ -8,7 +8,7 @@ export default function Email() {
       });
     
       const handleSendEmail = () => {
-        axios.post('/send-email', emailData)
+        axios.post('http://localhost:3001/send-email', emailData)
           .then(response => {
             console.log(response.data);
           })
@@ -17,6 +17,7 @@ export default function Email() {
           });
       };
     
+      
       return (
         <div className="App">
           <input

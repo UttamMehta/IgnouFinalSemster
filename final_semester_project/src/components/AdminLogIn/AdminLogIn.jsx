@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import Email from './Email';
 
 function AdminLogIn(props) {
 
@@ -14,8 +16,17 @@ function AdminLogIn(props) {
     function checkadmin(e){
         e.preventDefault();
         if(state.email==="Admin"&&state.password==="1234")
-        alert ("admin chekced  sucessful");
+       { alert ("admin chekced  sucessful");
+    setAdmin(true);
     }
+    else{
+        alert("admin credential not matched");
+    }
+    }
+
+    if(admin)
+    return <Email />
+    
 
     console.log(state);
 
