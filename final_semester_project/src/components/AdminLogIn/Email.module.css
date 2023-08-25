@@ -1,6 +1,7 @@
 .Email {
     text-align: center;
     padding: 20px;
+   
   }
   
   .email_form {
@@ -9,17 +10,24 @@
     padding: 20px;
     background-color: #f4f4f4;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 12px;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
   
   input[type="email"],
   input[type="text"],
   textarea {
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+  }
+
+  textarea{
+    height: 100px;
+    padding: 5px;
   }
   
   .send_button {
@@ -29,4 +37,8 @@
     padding: 10px;
     border-radius: 3px;
     cursor: pointer;
+    width: 100%;
+  }
+  form{
+   
   }

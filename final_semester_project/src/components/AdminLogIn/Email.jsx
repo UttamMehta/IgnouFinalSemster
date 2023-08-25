@@ -22,7 +22,7 @@ export default function Email() {
 
       return (
         <div className={styles.email}>
-            <div>
+            <div className={styles.email_form}>
           <input
             type="email"
             placeholder="Recipient Emails (comma-separated)"
