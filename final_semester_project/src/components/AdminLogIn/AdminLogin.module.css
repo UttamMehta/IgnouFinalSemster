@@ -3,7 +3,9 @@
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 16px;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
   
   form {
@@ -30,4 +32,9 @@
     border-radius: 3px;
     cursor: pointer;
     width: 100%;
+  }
+  
+  .login_form button:disabled {
+    background-color: #ccc; /* Change to your desired color */
+    cursor: not-allowed;
   }
