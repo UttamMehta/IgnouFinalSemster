@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import styles from "./Email.module.css"
 
 export default function Email() {
     const [emailData, setEmailData] = useState({
@@ -20,7 +21,8 @@ export default function Email() {
     
 
       return (
-        <div className="App">
+        <div className={styles.email}>
+            <div>
           <input
             type="email"
             placeholder="Recipient Emails (comma-separated)"
@@ -38,7 +40,8 @@ export default function Email() {
             value={emailData.text}
             onChange={(e) => setEmailData({ ...emailData, text: e.target.value })}
           />
-          <button onClick={handleSendEmail}>Send Email</button>
+          <button className={styles.send_button} onClick={handleSendEmail}>Send Email</button>
+        </div>
         </div>
       );
     }

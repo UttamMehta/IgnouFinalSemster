@@ -17,7 +17,7 @@ function AdminLogIn(props) {
 
     function checkadmin(e){
         e.preventDefault();
-        if(state.email==="Admin"&&state.password==="1234")
+        if(state.email==="admin@gmail.com"&&state.password==="1234")
        { alert ("admin chekced  sucessful");
     setAdmin(true);
     }
