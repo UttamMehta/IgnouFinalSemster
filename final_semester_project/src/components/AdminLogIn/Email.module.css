@@ -1,7 +1,6 @@
 .Email {
     text-align: center;
     padding: 20px;
-   
   }
   
   .email_form {
@@ -39,6 +38,8 @@
     cursor: pointer;
     width: 100%;
   }
-  form{
-   
+  
+  .send_button:disabled {
+    background-color: #ccc; /* Change to your desired color */
+    cursor: not-allowed;
   }

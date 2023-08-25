@@ -10,12 +10,14 @@ export default function Email() {
       });
     
       const handleSendEmail = () => {
-        axios.post('http://localhost:3001/send-email', emailData)
+        axios.post('http://localhost:3001/sendemail', emailData)
           .then(response => {
             console.log(response.data);
+            alert(response.data);
           })
           .catch(error => {
             console.error(error);
+            alert("some error occur try later");
           });
       };
     
@@ -40,7 +42,7 @@ export default function Email() {
             value={emailData.text}
             onChange={(e) => setEmailData({ ...emailData, text: e.target.value })}
           />
-          <button className={styles.send_button} onClick={handleSendEmail}>Send Email</button>
+          <button className={styles.send_button} onClick={handleSendEmail} disabled={emailData.to.length>0&&emailData.subject&&emailData.text?false:true}>Send Email</button>
         </div>
         </div>
       );
