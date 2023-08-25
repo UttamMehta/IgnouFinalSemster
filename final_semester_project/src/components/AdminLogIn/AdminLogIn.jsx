@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import Email from './Email';
 import axios from 'axios';
+import styles from "./AdminLogin.module.css"
 
 function AdminLogIn(props) {
 
@@ -32,8 +33,8 @@ function AdminLogIn(props) {
     console.log(state);
 
     return (
-          <div className="login-form">
-      <h2>Login</h2>
+          <div className={styles.login_form}>
+      <h2>Admin Login</h2>
       <form onSubmit={checkadmin}>
         <label htmlFor="email">Email:</label>
         <input type="email" id="email" name="email"onChange={updateState} />
@@ -41,7 +42,7 @@ function AdminLogIn(props) {
         <label htmlFor="password">Password:</label>
         <input type="password" id="password" name="password" onChange={updateState}/>
 
-        <button type="submit">Login</button>
+        <button type="submit" disabled={state.email&&state.password?false:true}>Login</button>
       </form>
         </div>
     );
