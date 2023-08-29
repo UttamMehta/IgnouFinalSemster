@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import styles from "./UserList.module.css";
 
 const UserList = ({ users }) => {
   const deleteUser = async (id) => {
@@ -13,7 +14,7 @@ const UserList = ({ users }) => {
 
   return (
     <div>
-      <table className="user-table">
+      <table className={styles.user_table}>
         <thead>
           <tr>
             <th>Name</th>
