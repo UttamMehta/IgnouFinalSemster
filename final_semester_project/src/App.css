@@ -20,6 +20,11 @@ form{
   font-family: sans-serif;
 }
 
+button:disabled {
+  background-color: #ccc; /* Change to your desired color */
+  cursor: not-allowed;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
