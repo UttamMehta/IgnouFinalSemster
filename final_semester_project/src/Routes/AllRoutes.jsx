@@ -12,6 +12,7 @@ import VideoThumnails from '../components/Videopage/VideoThumnails';
 import VideoPlaySingle from '../components/Videopage/VideoPlaySingle';
 import NewsComponent from '../components/NewsPages/NewsComponent';
 import Email from '../components/AdminLogIn/Email';
+import Admin from '../components/AdminLogIn/Admin';
 
 
 
@@ -28,6 +29,7 @@ function AllRoutes(props) {
               <Route path='/play/:id' element={<VideoPlaySingle /> }/>
               <Route path='/news' element={<NewsComponent />} />
               <Route path='/admin' element={<AdminLogIn />} />
+              <Route path='/admin/otherpages' element={<Admin />} />
               <Route path='/email' element={<Email />} />
 
 
