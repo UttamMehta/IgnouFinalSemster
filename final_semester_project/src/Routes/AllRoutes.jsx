@@ -32,6 +32,30 @@ function AllRoutes(props) {
               <Route path='/admin/otherpages' element={<Admin />} />
               <Route path='/email' element={<Email />} />
 
+              <PrivateRoute
+          exact
+          path="/student-dashboard"
+          component={StudentDashboardPage}
+          isAuthenticated={userAuthenticated}
+          userRole="student"
+          allowedRoles={['student']}
+        />
+        <PrivateRoute
+          exact
+          path="/admin-dashboard"
+          component={AdminDashboardPage}
+          isAuthenticated={userAuthenticated}
+          userRole="admin"
+          allowedRoles={['admin']}
+        />
+        <PrivateRoute
+          exact
+          path="/email"
+          component={EmailPage}
+          isAuthenticated={userAuthenticated}
+          userRole="admin"
+          allowedRoles={['admin']}
+        />
 
 
               <Route path="*" element={<h1 style={{color:"red"}}>Error No Such Page</h1>}/>
