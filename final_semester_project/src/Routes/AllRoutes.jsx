@@ -30,7 +30,7 @@ function AllRoutes(props) {
               <Route path='/news' element={<NewsComponent />} />
               <Route path='/admin' element={<AdminLogIn />} />
               <Route path='/admin/otherpages' element={<Admin />} />
-              {/* <Route path='/email' element={<Email />} /> */}
+              <Route path='/email' element={<Email />} />
 
               <PrivateRoute
           exact
