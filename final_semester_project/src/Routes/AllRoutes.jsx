@@ -29,7 +29,7 @@ function AllRoutes(props) {
               <Route path='/play/:id' element={<VideoPlaySingle /> }/>
               <Route path='/news' element={<NewsComponent />} />
               <Route path='/admin' element={<AdminLogIn />} />
-              <Route path='/admin/otherpages' element={<Admin />} />
+              {/* <Route path='/admin/otherpages' element={<Admin />} /> */}
               <Route path='/email' element={<Email />} />
 
               <PrivateRoute
