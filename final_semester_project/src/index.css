@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Add this to your CSS */
+.top_navbar {
+  background-color: #333;
+  color: white;
+  height: 60px; /* Set a fixed height for the top navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom_navbar {
+  background-color: #333;
+  color: white;
+  height: 60px; /* Set a fixed height for the bottom navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_content {
+  padding: 20px;
+  /* Add any other styles for your main content here */
+}
+
+/* Loading indicator styles */
+.loading_indicator {
+  font-size: 18px;
+  font-weight: bold;
+}

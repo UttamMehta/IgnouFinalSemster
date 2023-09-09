@@ -12,11 +12,15 @@ function App() {
   return (
     <div>
       <Provider store={store}>
+     
       <BrowserRouter>
         <Navbar />
+        <main className="main-content">
         <AllRoutes />
+        </main>
         <Footer />
       </BrowserRouter>
+      
       </Provider>
     </div>
   );
