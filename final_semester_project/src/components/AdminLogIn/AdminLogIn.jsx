@@ -34,19 +34,19 @@ function AdminLogIn(props) {
     console.log(state);
 
     return (
-    //       <div className={styles.login_form}>
-    //   <h2>Admin Login</h2>
-    //   <form onSubmit={checkadmin}>
-    //     <label htmlFor="email">Email:</label>
-    //     <input type="email" id="email" name="email"onChange={updateState} />
+          <div className={styles.login_form}>
+      <h2>Admin Login</h2>
+      <form onSubmit={checkadmin}>
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email"onChange={updateState} />
 
-    //     <label htmlFor="password">Password:</label>
-    //     <input type="password" id="password" name="password" onChange={updateState}/>
+        <label htmlFor="password">Password:</label>
+        <input type="password" id="password" name="password" onChange={updateState}/>
 
-    //     <button type="submit" disabled={state.email&&state.password?false:true}>Login</button>
-    //   </form>
-    //     </div>
-        <></>
+        <button type="submit" disabled={state.email&&state.password?false:true}>Login</button>
+      </form>
+        </div>
+      
     );
 }
 
