@@ -15,7 +15,7 @@ function App() {
      
       <BrowserRouter>
         <Navbar />
-        <main className="main-content">
+        <main className="main_content">
         <AllRoutes />
         </main>
         <Footer />
